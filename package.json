@@ -4,11 +4,14 @@
   "description": "",
   "main": "app-promises.js",
   "scripts": {
-    "start":"node currency-convert.js"
+    "start": "node currency-convert.js",
+    "start-server": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
   }
 }

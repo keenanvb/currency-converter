@@ -1,7 +1,6 @@
 /*
 Currency Converter
 */
-
 let axios = require('axios');
 
 let API_KEY = '';
@@ -25,7 +24,8 @@ const getExchangeRate = async (from, to) => {
 const getCountries = async (currencyCode) => {
     try {
         res = await axios.get(`https://restcountries.eu/rest/v2/currency/${currencyCode}`);
-        return res.data.map((country) => country.name);
+        //return res.data.map((country) => country.name);
+        return res.data;
     } catch (e) {
         throw new Error(`Unable to get countries that use ${currencyCode} currency code.`)
     }
@@ -41,12 +41,16 @@ const convertCurrency = async (from, to, amount) => {
         to: to,
         amount: amount,
         convertedAmount: convertedAmount,
-        countriesAvail: countries.join(', ')
+        countriesAvail: countries//countries.join(', ')
     }
 }
 
-convertCurrency('USD', 'ZAR', 500).then((obj) => {
-    console.log(obj);
-}).catch((e) => {
-    console.log(e);
-});
+// convertCurrency('USD', 'ZAR', 500).then((obj) => {
+//     console.log(obj);
+// }).catch((e) => {
+//     console.log(e);
+// });
+
+module.exports = {
+    convertCurrency
+}
