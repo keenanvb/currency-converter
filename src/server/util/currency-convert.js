@@ -37,9 +37,9 @@ const convertCurrency = async (from, to, amount) => {
     const convertedAmount = (amount * rate).toFixed(2);
 
     return {
-        from: from,
-        to: to,
-        amount: amount,
+        //from: from,
+        //to: to,
+        //amount: amount,
         convertedAmount: convertedAmount,
         countriesAvail: countries//countries.join(', ')
     }
