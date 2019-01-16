@@ -14,30 +14,23 @@
         "key": "location"
     },
     {
+        "id": 2,
+        "title": "United Stats of America",
+        "currency": "USD",
+        "selected": false,
+        "key": "location"
+    },
+    {
         "id": 3,
-        "title": "USA3",
+        "title": "United Stats of America",
         "currency": "USD",
         "selected": false,
         "key": "location"
     },
     {
         "id": 4,
-        "title": "USA4",
+        "title": "United Stats of America",
         "currency": "USD",
-        "selected": false,
-        "key": "location"
-    },
-    {
-        "id": 5,
-        "title": "USA5s",
-        "currency": "USD",
-        "selected": false,
-        "key": "location"
-    },
-    {
-        "id": 6,
-        "title": "A",
-        "currency": "A ",
         "selected": false,
         "key": "location"
     }

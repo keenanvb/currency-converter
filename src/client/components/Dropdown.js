@@ -24,11 +24,35 @@ class Dropdown extends Component {
     }))
   }
 
+  displayFirstLetter(list,item,index){
+    let titles = list.map((item)=>{
+      return item.title[0]
+    })
+
+    let prevTitle = titles[index-1];
+    if(titles[index] == item.title[0]){
+      if(prevTitle != item.title[0]){
+        return(
+          <div className="displayFirst">
+            {item.title[0]}
+          </div>
+        )
+      }
+    }else{
+      return(
+        null
+      )
+    }
+  }
+
   render() {
-    const{list,status, title} = this.props
+    const{list,status, title, mainTitle} = this.props
     const{listOpen} = this.state
      return (
+    
       <div className="wrapper">
+      <div className="header-title">{mainTitle}</div>
+      <div style={{overflowY:"scroll", height:"120px"}}>
       <div className="header" onClick={() => this.toggleList()}>
           <div className="header-title">{title}</div>
           {listOpen
@@ -36,11 +60,17 @@ class Dropdown extends Component {
             : <FontAwesome name="angle-down" size="2x"/>
           }
       </div>
-       {listOpen && <ul className="list" onClick={() => this.toggleList()}>
-         {list.map((item) => (
+       {listOpen && <ul className="Dropdown-list" onClick={() => this.toggleList()}>
+         {list.map((item,index) => (
+           <div>
+             <div key={`${item.id}`}>
+             {this.displayFirstLetter(list,item,index)}
+            </div>
            <li className="list-item" key={`${item.id}${item.title}`} onClick={()=>this.toggleItem(item.id, item.title, item.currency, status)}>{item.title} {item.currency}{item.selected && <FontAwesome name="check"/>}</li>
+            </div>
           ))}
         </ul>}
+      </div>
       </div>
      )
      }

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-
+import './css/main.css';
 import utils from "./utils/utils";
 import Dropdown  from "./components/Dropdown";
 import CountryList from './components/country_list';
@@ -16,10 +16,13 @@ export class App extends React.Component{
       from:'',
       to:'',
       amount:'',
-      dropDownTitle1: 'Please select FROM',
-      dropDownTitle2: 'Please select TO',
+      dropDownTitleFrom: 'From',
+      dropDownTitleTo: 'To',
+      dropDownTitle1: 'What I Have',
+      dropDownTitle2: 'What I Want',
       location: data,
-      countryInfo:countryData,
+      countryInfo:[],
+      countryInfoDev:countryData,
       convertedCurrency:''
     }
 
@@ -45,6 +48,10 @@ export class App extends React.Component{
             amount: result.amount
           })
           .then(response=> {
+            this.setState({
+              convertedCurrency:response.data.convertedAmount,
+              countryInfo:response.data.countriesAvail
+            })
             console.log(response.data);
           })
           .catch(error => {
@@ -77,33 +84,36 @@ export class App extends React.Component{
       return x.title > y.title ? 1: -1;
     });
 
-     return (<div>
-              <label>
-              From:
-              </label>
-               <Dropdown
-                  status = 'from'
-                  title={this.state.dropDownTitle1}
-                  list={sortlocation}
-                  toggleItem={this.toggleSelected}
-                />
-                <label>
-              To:
-                  </label>
-                 <Dropdown
-                  status = 'to'
-                  title={this.state.dropDownTitle2}
-                  list={sortlocation}
-                  toggleItem={this.toggleSelected}
-                />
-                <label>
-              Amount:
-    <input type="text" name="name" ref="amount" />
-  </label>
-  <input type="submit" value="Submit" onClick={()=>this.getAmount()} />
-<CountryList
-country={this.state.countryInfo}
-/>
-            </div>)
+    let countryData = this.state.countryInfo;
+    let result = this.state.convertedCurrency;
+
+     return (
+            <div>
+            <header className="App-header">
+            <div>currency converter</div>
+            </header>
+            <div className="Container">
+              {/* <label>From:</label> */}
+              <div className="From">
+              <Dropdown mainTitle={this.state.dropDownTitleFrom} status = 'from' title={this.state.dropDownTitle1} list={sortlocation} toggleItem={this.toggleSelected}/>
+              </div>
+              {/* <label>To:</label> */}
+              <div className="To">
+              <Dropdown mainTitle={this.state.dropDownTitleTo } status = 'to' title={this.state.dropDownTitle2} list={sortlocation} toggleItem={this.toggleSelected} />
+              </div>
+              <div className="User-input">
+              {/* <label>Amount:</label> */}
+              <input autoComplete="off" type="text" name="name" ref="amount" />
+              
+              <input type="submit" value="Submit" onClick={()=>this.getAmount()} />
+              </div>
+              <div>{result}</div>
+            </div>
+            <div className="Container-country">
+            {/* <CountryList country={this.state.countryInfoDev}/> */}
+            <CountryList country={countryData}/>
+            </div>
+            </div>
+            )
      }
 }

@@ -8,7 +8,6 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   entry: path.resolve(__dirname, 'src') + '/client/index.js',
-  //entry: "./src/app.js",
   output: {
     path: path.resolve('dist'),
     filename: 'bundled.js'
@@ -23,19 +22,15 @@ module.exports = {
       },
 
       {
-        test: /\.css$/,
-        use: [{
-            loader: "style-loader"
+        rules: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
           },
           {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
           }
         ]
       }
