@@ -34,7 +34,7 @@ export class App extends React.Component{
     let amount = parseInt(this.refs.amount.value);
     let from = this.state.from;
     let to = this.state.to;
-  
+
     if(from !=='' && to !==''){
           let result = {
             amount:amount,
@@ -86,6 +86,7 @@ export class App extends React.Component{
 
     let countryData = this.state.countryInfo;
     let result = this.state.convertedCurrency;
+    let code = this.state.to;
 
      return (
             <div>
@@ -107,11 +108,10 @@ export class App extends React.Component{
               
               <input type="submit" value="Submit" onClick={()=>this.getAmount()} />
               </div>
-              <div>{result}</div>
             </div>
             <div className="Container-country">
             {/* <CountryList country={this.state.countryInfoDev}/> */}
-            <CountryList country={countryData}/>
+            <CountryList code={code}  result={result}  country={countryData}/>
             </div>
             </div>
             )

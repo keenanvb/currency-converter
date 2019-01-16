@@ -13,7 +13,7 @@ const CountryList = (props)=>{
 
     return (
         <div>
-            <h2>Where you can spend it</h2>
+            <h1>Where you can spend {props.result} {props.code}</h1>
             <div style={{overflowY:"scroll", height:"400px"}}>
             <ul className="List">
                 {CountryItems}
