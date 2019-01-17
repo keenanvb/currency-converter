@@ -66,7 +66,7 @@ class Dropdown extends Component {
              <div key={`${item.id}`}>
              {this.displayFirstLetter(list,item,index)}
             </div>
-           <li className="list-item" key={`${item.id}${item.title}`} onClick={()=>this.toggleItem(item.id, item.title, item.currency, status)}>{item.title} {item.currency}{item.selected && <FontAwesome name="check"/>}</li>
+           <li className="list-item" key={`${item.id}${item.title}`} onClick={()=>this.toggleItem(item.id, item.title, item.code, status)}>{item.title} {item.code}{item.selected && <FontAwesome name="check"/>}</li>
             </div>
           ))}
         </ul>}

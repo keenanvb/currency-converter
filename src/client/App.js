@@ -23,7 +23,8 @@ export class App extends React.Component{
       location: data,
       countryInfo:[],
       countryInfoDev:countryData,
-      convertedCurrency:''
+      convertedCurrency:'',
+      code:''
     }
 
     this.toggleSelected = this.toggleSelected.bind(this);
@@ -50,7 +51,8 @@ export class App extends React.Component{
           .then(response=> {
             this.setState({
               convertedCurrency:response.data.convertedAmount,
-              countryInfo:response.data.countriesAvail
+              countryInfo:response.data.countriesAvail,
+              code:result.to
             })
             console.log(response.data);
           })
@@ -62,18 +64,18 @@ export class App extends React.Component{
 
   }
 
-  toggleSelected(id, title, currency, status){
+  toggleSelected(id, title, code, status){
     if(status === 'from'){
       this.setState({
-        dropDownTitle1: `${title} ${currency}`,
-        from: currency
+        dropDownTitle1: `${title} ${code}`,
+        from: code
       });
     }
 
     if(status === 'to'){
       this.setState({
-        dropDownTitle2: `${title} ${currency}`,
-        to: currency
+        dropDownTitle2: `${title} ${code}`,
+        to: code
       });
     }
   }
@@ -86,7 +88,7 @@ export class App extends React.Component{
 
     let countryData = this.state.countryInfo;
     let result = this.state.convertedCurrency;
-    let code = this.state.to;
+    let code = this.state.code;
 
      return (
             <div>
@@ -113,6 +115,7 @@ export class App extends React.Component{
             {/* <CountryList country={this.state.countryInfoDev}/> */}
             <CountryList code={code}  result={result}  country={countryData}/>
             </div>
+            <div className="footer"></div>
             </div>
             )
      }

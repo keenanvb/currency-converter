@@ -20,6 +20,13 @@ class CountryListItem extends Component {
         listOpen: !prevState.listOpen
       }))
     }
+
+    getLocation(lat,lng){
+      let url = `https://www.google.com/maps?q=${lat},${lng}&z=20&t=m`
+      return (
+        <a href={url} target="_blank">Location</a>
+      ) 
+    }
   
     render() {
       const{listOpen} = this.state
@@ -60,8 +67,12 @@ class CountryListItem extends Component {
         <div className="Country-detail" onClick={() => this.toggleList()}>
         <li className="Country-detail-list">
         <div className="Country-detail-list-main">
-        <div><img  style={{width: '50px', height: '50px'}} src={country.flag} alt="country flag" className="img-responsive"/><span></span></div>
-        <div style={{flexGrow: '0.8'}}>{country.capital},{country.name}</div>
+        <div style={{flexGrow: '0.5'}}><img  style={{width: '50px', height: '50px'}} src={country.flag} alt="country flag" className="img-responsive"/><span></span></div>
+        <div style={{flexGrow: '0.5'}}>{country.name}</div>
+        <div style={{display:"flex",flexDirection:"column", flexGrow: '0.5'}}>
+        <div>Capital</div>
+        <div>{country.capital}</div>
+        </div>
         <div style={{flexGrow: '0.2'}}>timezones: {timezones}</div>
         <div style={{flexGrow: '0.2'}}>Languages: {languages}</div>
         <div style={{flexGrow: '0.2'}}>Currencies: {currencies}</div>
@@ -69,7 +80,7 @@ class CountryListItem extends Component {
         </div>
         {/* <div><img src={country.flag} alt="country flag" className="img-responsive"/><span></span></div>; */}
         {listOpen && <div className="Country-detail-list-sub-main" onClick={() => this.toggleList()}>
-        <div>latlng: {country.latlng[0]} , {country.latlng[1]}</div>
+        <div>{this.getLocation(country.latlng[0],country.latlng[1])}</div>
         <div>Region: {country.region}</div>
         <div>Subregion: {country.subregion}</div>
         </div>}
