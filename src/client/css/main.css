@@ -37,12 +37,12 @@ body {
 }
 
 .From {
-    width: 300px;
+    width: 400px;
     height: 100px;
 }
 
 .To {
-    width: 300px;
+    width: 400px;
     height: 100px;
 }
 
@@ -58,8 +58,10 @@ body {
 }
 
 .displayFirst {
+    color: #282c34;
+    font-size: 18px;
     width: 15%;
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #282c34;
 }
 
 .list-item {
