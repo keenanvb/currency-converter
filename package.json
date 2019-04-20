@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "start-server": "webpack --mode production && node src/server/server.js",
-    "countries":"node ./src/server/util/getDropdownData.js"
+    "start:dev": "webpack-dev-server --mode development --open --hot",
+    "start:prod": "webpack --mode production && node src/server/server.js",
+    "countries": "node ./src/server/util/getDropdownData.js"
   },
   "keywords": [],
   "author": "",
