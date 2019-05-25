@@ -1,4 +1,5 @@
-[{
+[
+    {
         "name": "American Samoa",
         "topLevelDomain": [
             ".as"
@@ -18,7 +19,10 @@
         "region": "Oceania",
         "subregion": "Polynesia",
         "population": 57100,
-        "latlng": [-14.33333333, -170],
+        "latlng": [
+            -14.33333333,
+            -170
+        ],
         "demonym": "American Samoan",
         "area": 199,
         "gini": null,
@@ -28,12 +32,15 @@
         "borders": [],
         "nativeName": "American Samoa",
         "numericCode": "016",
-        "currencies": [{
-            "code": "USD",
-            "name": "United State Dollar",
-            "symbol": "$"
-        }],
-        "languages": [{
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United State Dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
                 "iso639_1": "en",
                 "iso639_2": "eng",
                 "name": "English",
@@ -82,7 +89,8 @@
         "subregion": "Caribbean",
         "population": 17408,
         "latlng": [
-            12.15, -68.266667
+            12.15,
+            -68.266667
         ],
         "demonym": "Dutch",
         "area": 294,
@@ -93,17 +101,21 @@
         "borders": [],
         "nativeName": "Bonaire",
         "numericCode": "535",
-        "currencies": [{
-            "code": "USD",
-            "name": "United States dollar",
-            "symbol": "$"
-        }],
-        "languages": [{
-            "iso639_1": "nl",
-            "iso639_2": "nld",
-            "name": "Dutch",
-            "nativeName": "Nederlands"
-        }],
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "nl",
+                "iso639_2": "nld",
+                "name": "Dutch",
+                "nativeName": "Nederlands"
+            }
+        ],
         "translations": {
             "de": "Bonaire, Sint Eustatius und Saba",
             "es": null,
@@ -137,7 +149,8 @@
         "region": "Africa",
         "subregion": "Eastern Africa",
         "population": 3000,
-        "latlng": [-6,
+        "latlng": [
+            -6,
             71.5
         ],
         "demonym": "Indian",
@@ -149,17 +162,21 @@
         "borders": [],
         "nativeName": "British Indian Ocean Territory",
         "numericCode": "086",
-        "currencies": [{
-            "code": "USD",
-            "name": "United States dollar",
-            "symbol": "$"
-        }],
-        "languages": [{
-            "iso639_1": "en",
-            "iso639_2": "eng",
-            "name": "English",
-            "nativeName": "English"
-        }],
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
         "translations": {
             "de": "Britisches Territorium im Indischen Ozean",
             "es": "Territorio Británico del Océano Índico",
@@ -173,18 +190,20 @@
             "fa": "قلمرو بریتانیا در اقیانوس هند"
         },
         "flag": "https://restcountries.eu/data/iot.svg",
-        "regionalBlocs": [{
-            "acronym": "AU",
-            "name": "African Union",
-            "otherAcronyms": [],
-            "otherNames": [
-                "الاتحاد الأفريقي",
-                "Union africaine",
-                "União Africana",
-                "Unión Africana",
-                "Umoja wa Afrika"
-            ]
-        }],
+        "regionalBlocs": [
+            {
+                "acronym": "AU",
+                "name": "African Union",
+                "otherAcronyms": [],
+                "otherNames": [
+                    "الاتحاد الأفريقي",
+                    "Union africaine",
+                    "União Africana",
+                    "Unión Africana",
+                    "Umoja wa Afrika"
+                ]
+            }
+        ],
         "cioc": ""
     },
     {
@@ -216,17 +235,21 @@
         "borders": [],
         "nativeName": "United States Minor Outlying Islands",
         "numericCode": "581",
-        "currencies": [{
-            "code": "USD",
-            "name": "United States Dollar",
-            "symbol": "$"
-        }],
-        "languages": [{
-            "iso639_1": "en",
-            "iso639_2": "eng",
-            "name": "English",
-            "nativeName": "English"
-        }],
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States Dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
         "translations": {
             "de": "Kleinere Inselbesitzungen der Vereinigten Staaten",
             "es": "Islas Ultramarinas Menores de Estados Unidos",
@@ -261,7 +284,8 @@
         "subregion": "Caribbean",
         "population": 28514,
         "latlng": [
-            18.431383, -64.62305
+            18.431383,
+            -64.62305
         ],
         "demonym": "Virgin Islander",
         "area": 151,
@@ -272,7 +296,8 @@
         "borders": [],
         "nativeName": "British Virgin Islands",
         "numericCode": "092",
-        "currencies": [{
+        "currencies": [
+            {
                 "code": null,
                 "name": "[D]",
                 "symbol": "$"
@@ -283,12 +308,14 @@
                 "symbol": "$"
             }
         ],
-        "languages": [{
-            "iso639_1": "en",
-            "iso639_2": "eng",
-            "name": "English",
-            "nativeName": "English"
-        }],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
         "translations": {
             "de": "Britische Jungferninseln",
             "es": "Islas Vírgenes del Reino Unido",
