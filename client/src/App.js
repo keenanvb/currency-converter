@@ -1,120 +1,137 @@
-import React, { Component } from "react";
-import axios from "axios";
-import './css/main.css';
-import Dropdown from "./components/Dropdown";
-import CountryList from './components/country_list';
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import axios from 'axios'
 
-const data = require('./components/data.json');
+import NavBar from './components/NavBar'
+import Dropdown from './components/Dropdown'
+import Loading from './components/Loading'
+import CountryList from './components/CountryList';
+
 const countryData = require('./components/countries.json');
+const data = require('./utils/data.json');
 
-export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      from: '',
-      to: '',
-      amount: '',
-      dropDownTitleFrom: 'From',
-      dropDownTitleTo: 'To',
-      dropDownTitle1: 'What I Have',
-      dropDownTitle2: 'What I Want',
-      location: data,
-      countryInfo: [],
-      countryInfoDev: countryData,
-      convertedCurrency: '',
-      code: ''
-    }
+const App = () => {
 
-    this.toggleSelected = this.toggleSelected.bind(this);
+  const [formData, setFormData] = useState({
+    from: '',
+    to: '',
+    amount: '',
+    dropDownTitle1: 'What I have',
+    dropDownTitle2: 'What I want',
+    convertedAmount: '',
+    countriesAvail: [],
+    isLoading: false
+  });
 
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  getAmount() {
-    let amount = parseInt(this.refs.amount.value);
-    let from = this.state.from;
-    let to = this.state.to;
-
-    if (from !== '' && to !== '') {
-      let result = {
-        amount: amount,
-        from: from,
-        to: to
-      }
-
-      axios.post('http://localhost:3000/api/convert', {
-        from: result.from,
-        to: result.to,
-        amount: result.amount
-      })
-        .then(response => {
-          this.setState({
-            convertedCurrency: response.data.convertedAmount,
-            countryInfo: response.data.countriesAvail,
-            code: result.to
-          })
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      console.log(JSON.stringify(result, undefined, 2));
-    }
-
-  }
-
-  toggleSelected(id, title, code, status) {
+  let selectedItem = (id, title, code, status) => {
     if (status === 'from') {
-      this.setState({
-        dropDownTitle1: `${title} ${code}`,
+      setFormData({
+        ...formData, dropDownTitle1: `What I have: ${title} - ${code}`,
         from: code
       });
     }
 
     if (status === 'to') {
-      this.setState({
-        dropDownTitle2: `${title} ${code}`,
+      setFormData({
+        ...formData, dropDownTitle2: `What I want: ${title} - ${code}`,
         to: code
       });
     }
   }
 
-  render() {
-
-    const sortlocation = this.state.location.sort((x, y) => {
-      return x.title > y.title ? 1 : -1;
+  let getAmount = async () => {
+    const { from, to, amount } = formData
+    setFormData({
+      ...formData, isLoading: true
     });
-
-    let countryData = this.state.countryInfo;
-    let result = this.state.convertedCurrency;
-    let code = this.state.code;
-
-    return (
-      <div>
-        <header className="App-header">
-          <div>currency converter</div>
-        </header>
-        <div className="Container">
-          {/* <label>From:</label> */}
-          <div className="From">
-            <Dropdown mainTitle={this.state.dropDownTitleFrom} status='from' title={this.state.dropDownTitle1} list={sortlocation} toggleItem={this.toggleSelected} />
-          </div>
-          {/* <label>To:</label> */}
-          <div className="To">
-            <Dropdown mainTitle={this.state.dropDownTitleTo} status='to' title={this.state.dropDownTitle2} list={sortlocation} toggleItem={this.toggleSelected} />
-          </div>
-          <div className="User-input">
-            {/* <label>Amount:</label> */}
-            <input autoComplete="off" type="text" name="name" ref="amount" />
-
-            <input type="submit" value="Submit" onClick={() => this.getAmount()} />
-          </div>
-        </div>
-        <div className="Container-country">
-          {/* <CountryList country={this.state.countryInfoDev}/> */}
-          <CountryList code={code} result={result} country={countryData} />
-        </div>
-        <div className="footer"></div>
-      </div>
-    )
+    try {
+      let res = await axios.post('/api/convert', {
+        from,
+        to,
+        amount
+      })
+      setFormData({
+        ...formData, convertedAmount: res.data.convertedAmount,
+        countriesAvail: res.data.countriesAvail,
+        isLoading: false
+      });
+      // console.log(JSON.stringify(res.data, undefined, 2));
+    } catch (e) {
+      console.log(e);
+    }
   }
+
+  const { dropDownTitle1, dropDownTitle2, amount, convertedAmount, countriesAvail, code, to, isLoading } = formData
+  // console.log('formData', formData);
+
+  const sortedData = data.sort((x, y) => {
+    return x.title > y.title ? 1 : -1;
+  });
+
+  const displayCountryinfo = () => {
+    console.log('yes available logging')
+    if (countriesAvail.length > 0) {
+      console.log('yes available')
+      return (
+        < CountryList code={code} country={countriesAvail} />
+      )
+    } else {
+      return null
+    }
+  }
+
+  return (
+    <div>
+      <NavBar />
+      <div className='container'>
+        <div className='top-container'>
+          <Dropdown dropDownTitle={dropDownTitle1} status='from' dropdownData={sortedData} selectedItem={selectedItem} />
+          <Dropdown dropDownTitle={dropDownTitle2} status='to' dropdownData={sortedData} selectedItem={selectedItem} />
+          <div className='input-container'>
+            <div className='input-container-text'>
+              {`AMOUNT:${amount}`}
+            </div>
+            <div className='input-container-amount'>
+              <input
+                placeholder='Amount'
+                autoComplete="off"
+                type="text"
+                value={amount}
+                name="amount"
+                onChange={(e) => { onChange(e) }}
+                maxLength="10"
+              />
+            </div>
+            <div className='input-container-button'>
+              <input className="btn" type="submit" value="Submit" onClick={() => getAmount()} />
+            </div>
+            {/* <div>
+              {convertedAmount ?
+                `TOTAL: ${convertedAmount}` : null
+              }
+            </div> */}
+          </div>
+        </div>
+        <div className='middle-container'>
+          {convertedAmount ?
+            `TOTAL: ${convertedAmount} ${to}` : null
+          }
+
+        </div>
+        <div className='bottom-container'>
+          {isLoading ? <Loading /> : null}
+          {countriesAvail ? < CountryList code={code} country={countriesAvail} /> : null}
+          {/* dev */}
+          {/* <CountryList code={code} country={countryData} /> : null */}
+        </div>
+      </div>
+
+    </div >
+  );
 }
+
+export default App;
