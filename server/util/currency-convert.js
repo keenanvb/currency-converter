@@ -3,11 +3,11 @@ Currency Converter
 */
 let axios = require('axios');
 
-let API_KEY = '';
+const FIXER_API_KEY = require('../config/keys').fixer_api_key;
 
 const getExchangeRate = async (from, to) => {
     try {
-        const res = await axios.get(`http://data.fixer.io/api/latest?access_key=${API_KEY}`);
+        const res = await axios.get(`http://data.fixer.io/api/latest?access_key=${FIXER_API_KEY}`);
         const euro = 1 / res.data.rates[from];
         const rate = euro * res.data.rates[to];
 
