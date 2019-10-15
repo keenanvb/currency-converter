@@ -1,0 +1,335 @@
+[
+    {
+        "name": "American Samoa",
+        "topLevelDomain": [
+            ".as"
+        ],
+        "alpha2Code": "AS",
+        "alpha3Code": "ASM",
+        "callingCodes": [
+            "1684"
+        ],
+        "capital": "Pago Pago",
+        "altSpellings": [
+            "AS",
+            "Amerika Sāmoa",
+            "Amelika Sāmoa",
+            "Sāmoa Amelika"
+        ],
+        "region": "Oceania",
+        "subregion": "Polynesia",
+        "population": 57100,
+        "latlng": [
+            -14.33333333,
+            -170
+        ],
+        "demonym": "American Samoan",
+        "area": 199,
+        "gini": null,
+        "timezones": [
+            "UTC-11:00"
+        ],
+        "borders": [],
+        "nativeName": "American Samoa",
+        "numericCode": "016",
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United State Dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            },
+            {
+                "iso639_1": "sm",
+                "iso639_2": "smo",
+                "name": "Samoan",
+                "nativeName": "gagana fa'a Samoa"
+            }
+        ],
+        "translations": {
+            "de": "Amerikanisch-Samoa",
+            "es": "Samoa Americana",
+            "fr": "Samoa américaines",
+            "ja": "アメリカ領サモア",
+            "it": "Samoa Americane",
+            "br": "Samoa Americana",
+            "pt": "Samoa Americana",
+            "nl": "Amerikaans Samoa",
+            "hr": "Američka Samoa",
+            "fa": "ساموآی آمریکا"
+        },
+        "flag": "https://restcountries.eu/data/asm.svg",
+        "regionalBlocs": [],
+        "cioc": "ASA"
+    },
+    {
+        "name": "Bonaire, Sint Eustatius and Saba",
+        "topLevelDomain": [
+            ".an",
+            ".nl"
+        ],
+        "alpha2Code": "BQ",
+        "alpha3Code": "BES",
+        "callingCodes": [
+            "5997"
+        ],
+        "capital": "Kralendijk",
+        "altSpellings": [
+            "BQ",
+            "Boneiru"
+        ],
+        "region": "Americas",
+        "subregion": "Caribbean",
+        "population": 17408,
+        "latlng": [
+            12.15,
+            -68.266667
+        ],
+        "demonym": "Dutch",
+        "area": 294,
+        "gini": null,
+        "timezones": [
+            "UTC-04:00"
+        ],
+        "borders": [],
+        "nativeName": "Bonaire",
+        "numericCode": "535",
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "nl",
+                "iso639_2": "nld",
+                "name": "Dutch",
+                "nativeName": "Nederlands"
+            }
+        ],
+        "translations": {
+            "de": "Bonaire, Sint Eustatius und Saba",
+            "es": null,
+            "fr": "Bonaire, Saint-Eustache et Saba",
+            "ja": null,
+            "it": "Bonaire, Saint-Eustache e Saba",
+            "br": "Bonaire",
+            "pt": "Bonaire",
+            "nl": null,
+            "hr": null,
+            "fa": "بونیر"
+        },
+        "flag": "https://restcountries.eu/data/bes.svg",
+        "regionalBlocs": [],
+        "cioc": null
+    },
+    {
+        "name": "British Indian Ocean Territory",
+        "topLevelDomain": [
+            ".io"
+        ],
+        "alpha2Code": "IO",
+        "alpha3Code": "IOT",
+        "callingCodes": [
+            "246"
+        ],
+        "capital": "Diego Garcia",
+        "altSpellings": [
+            "IO"
+        ],
+        "region": "Africa",
+        "subregion": "Eastern Africa",
+        "population": 3000,
+        "latlng": [
+            -6,
+            71.5
+        ],
+        "demonym": "Indian",
+        "area": 60,
+        "gini": null,
+        "timezones": [
+            "UTC+06:00"
+        ],
+        "borders": [],
+        "nativeName": "British Indian Ocean Territory",
+        "numericCode": "086",
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
+        "translations": {
+            "de": "Britisches Territorium im Indischen Ozean",
+            "es": "Territorio Británico del Océano Índico",
+            "fr": "Territoire britannique de l'océan Indien",
+            "ja": "イギリス領インド洋地域",
+            "it": "Territorio britannico dell'oceano indiano",
+            "br": "Território Britânico do Oceano íÍdico",
+            "pt": "Território Britânico do Oceano Índico",
+            "nl": "Britse Gebieden in de Indische Oceaan",
+            "hr": "Britanski Indijskooceanski teritorij",
+            "fa": "قلمرو بریتانیا در اقیانوس هند"
+        },
+        "flag": "https://restcountries.eu/data/iot.svg",
+        "regionalBlocs": [
+            {
+                "acronym": "AU",
+                "name": "African Union",
+                "otherAcronyms": [],
+                "otherNames": [
+                    "الاتحاد الأفريقي",
+                    "Union africaine",
+                    "União Africana",
+                    "Unión Africana",
+                    "Umoja wa Afrika"
+                ]
+            }
+        ],
+        "cioc": ""
+    },
+    {
+        "name": "United States Minor Outlying Islands",
+        "topLevelDomain": [
+            ".us"
+        ],
+        "alpha2Code": "UM",
+        "alpha3Code": "UMI",
+        "callingCodes": [
+            ""
+        ],
+        "capital": "",
+        "altSpellings": [
+            "UM"
+        ],
+        "region": "Americas",
+        "subregion": "Northern America",
+        "population": 300,
+        "latlng": [],
+        "demonym": "American",
+        "area": null,
+        "gini": null,
+        "timezones": [
+            "UTC-11:00",
+            "UTC-10:00",
+            "UTC+12:00"
+        ],
+        "borders": [],
+        "nativeName": "United States Minor Outlying Islands",
+        "numericCode": "581",
+        "currencies": [
+            {
+                "code": "USD",
+                "name": "United States Dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
+        "translations": {
+            "de": "Kleinere Inselbesitzungen der Vereinigten Staaten",
+            "es": "Islas Ultramarinas Menores de Estados Unidos",
+            "fr": "Îles mineures éloignées des États-Unis",
+            "ja": "合衆国領有小離島",
+            "it": "Isole minori esterne degli Stati Uniti d'America",
+            "br": "Ilhas Menores Distantes dos Estados Unidos",
+            "pt": "Ilhas Menores Distantes dos Estados Unidos",
+            "nl": "Kleine afgelegen eilanden van de Verenigde Staten",
+            "hr": "Mali udaljeni otoci SAD-a",
+            "fa": "جزایر کوچک حاشیه\u200cای ایالات متحده آمریکا"
+        },
+        "flag": "https://restcountries.eu/data/umi.svg",
+        "regionalBlocs": [],
+        "cioc": ""
+    },
+    {
+        "name": "Virgin Islands (British)",
+        "topLevelDomain": [
+            ".vg"
+        ],
+        "alpha2Code": "VG",
+        "alpha3Code": "VGB",
+        "callingCodes": [
+            "1284"
+        ],
+        "capital": "Road Town",
+        "altSpellings": [
+            "VG"
+        ],
+        "region": "Americas",
+        "subregion": "Caribbean",
+        "population": 28514,
+        "latlng": [
+            18.431383,
+            -64.62305
+        ],
+        "demonym": "Virgin Islander",
+        "area": 151,
+        "gini": null,
+        "timezones": [
+            "UTC-04:00"
+        ],
+        "borders": [],
+        "nativeName": "British Virgin Islands",
+        "numericCode": "092",
+        "currencies": [
+            {
+                "code": null,
+                "name": "[D]",
+                "symbol": "$"
+            },
+            {
+                "code": "USD",
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        ],
+        "languages": [
+            {
+                "iso639_1": "en",
+                "iso639_2": "eng",
+                "name": "English",
+                "nativeName": "English"
+            }
+        ],
+        "translations": {
+            "de": "Britische Jungferninseln",
+            "es": "Islas Vírgenes del Reino Unido",
+            "fr": "Îles Vierges britanniques",
+            "ja": "イギリス領ヴァージン諸島",
+            "it": "Isole Vergini Britanniche",
+            "br": "Ilhas Virgens Britânicas",
+            "pt": "Ilhas Virgens Britânicas",
+            "nl": "Britse Maagdeneilanden",
+            "hr": "Britanski Djevičanski Otoci",
+            "fa": "جزایر ویرجین بریتانیا"
+        },
+        "flag": "https://restcountries.eu/data/vgb.svg",
+        "regionalBlocs": [],
+        "cioc": "IVB"
+    }
+]
